@@ -1,0 +1,10 @@
+﻿CREATE TABLE [dbo].[PGInfo]
+(
+	[PGID] INT NOT NULL PRIMARY KEY IDENTITY(1,1), 
+    [PGName] VARCHAR(50) NOT NULL, 
+    [PGArea] VARCHAR(50) NOT NULL, 
+    [PGAdress] NVARCHAR(MAX) NOT NULL, 
+    [PGRate] MONEY NOT NULL, 
+    [PGCapacity] INT NOT NULL, 
+    [PGAvailability] INT NOT NULL
+)

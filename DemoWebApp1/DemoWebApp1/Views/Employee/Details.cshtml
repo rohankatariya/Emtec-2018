@@ -1,0 +1,58 @@
+﻿@model DemoWebApp1.Employee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Department)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HourlyPay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HourlyPay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bonusinc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bonusinc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeType.EmployeeTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeType.EmployeeTypeName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EmployeeId }) |
+    @Html.ActionLink("Picke Jao", "Index")
+</p>

@@ -1,0 +1,146 @@
+﻿@model DemoMVCApplication.Models.WrapperModel
+<style>
+    .update
+    {
+        height:500px;
+        width:30%;
+        z-index:10;
+        position:absolute;
+        background:white;
+        border:1px solid;
+        margin-left:300px;
+        margin-top:100px;
+        box-shadow:rgb(128, 128, 128) 5px 10px;
+        padding:20px;
+    }
+    .delete
+    {
+        height:150px;
+        width:30%;
+        z-index:10;
+        position:absolute;
+        background:white;
+        border:1px solid;
+        margin-left:300px;
+        margin-top:200px;
+        box-shadow:rgb(128, 128, 128) 5px 10px;
+        padding:20px;
+    }
+</style>
+<script>
+</script>
+
+@if (ViewBag.Update == 3)
+{
+    <div class="delete form-horizontal">
+        <table class="table">
+            <tr>
+                <td>
+                    @Html.Label("Do you really want to delete this movie from record?", htmlAttributes: new { @class = "control-label col-md-12" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.ActionLink("Delete Movie", "DeleteMovie", "Home", new { id = Model.movie.MovieId }, new { @class = "btn btn-danger btn-large" })
+                    @Html.ActionLink("Cancel", "ShowMovies", "Home", new { id = Model.movie.MovieId }, new { @class = "btn btn-primary btn-large" })
+                </td>
+            </tr>
+            </table>
+    </div>
+}
+@using(@Html.BeginForm("UpdateDetails", "Home", FormMethod.Post))
+{
+    if (ViewBag.Update == 2)
+    {
+        @Html.AntiForgeryToken()
+        <div class="update form-horizontal">
+            <h4>Employee</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.movie.MovieId)
+            <table class="table">
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.movie.MovieName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.movie.MovieName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.movie.MovieName, "", new { @class = "text-danger" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.movie.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.movie.Description, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.movie.Description, "", new { @class = "text-danger" })
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.movie.ReleaseDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.movie.ReleaseDate, new { htmlAttributes = new { @type = "date", @class = "form-control", @value = Model.movie.ReleaseDate } })
+                        @Html.ValidationMessageFor(model => model.movie.ReleaseDate, "", new { @class = "text-danger" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="btn btn-primary btn-large">Update</button>
+                    </td>
+                    <td>
+                        @Html.ActionLink("Cancel", "ShowMovies", "Home", null, new { @class = "btn btn-danger btn-large" })
+                    </td>
+                </tr>
+            </table>
+        </div>
+    }
+ }
+@using(Html.BeginForm())
+{
+    if (Model != null)
+    {
+        <h3>Movies List</h3>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.movie.MovieId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.movie.MovieName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.movie.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.movie.ReleaseDate)
+                </th>
+            </tr>
+            @foreach (var item in Model.Movies)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink(item.MovieId.ToString(), "DisplayUpdateBox", new { id = item.MovieId })
+                    </td>
+                    <td>
+                        @Html.Label(item.MovieName)
+                    </td>
+                    <td>
+                        @Html.Label(item.Description)
+                    </td>
+                    <td>
+                        @Html.Label(item.ReleaseDate.ToString("d"))
+                    </td>
+                    <td>
+                        @Html.ActionLink("X", "Delete", "Home", new { id = item.MovieId }, new { @class = "btn btn-primary btn-large" })
+                    </td>
+                </tr>
+            }
+        </table>
+        @Html.ActionLink("Add Employee", "AddMovie", "Home", new { @class = "btn btn-primary btn-large" })
+    }
+}
+
