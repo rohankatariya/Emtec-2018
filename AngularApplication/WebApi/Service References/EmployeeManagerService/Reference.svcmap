@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a877c06e-6ee2-4e9a-b97f-eb69fd6c1c70" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:60706/EmployeeManager.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="EmployeeManager.xsd" MetadataType="Schema" ID="6fa061b4-229d-40c2-a6f5-f604b694c01a" SourceId="1" SourceUrl="http://localhost:60706/EmployeeManager.svc?xsd=xsd0" />
+    <MetadataFile FileName="EmployeeManager1.xsd" MetadataType="Schema" ID="2bdbe91b-e512-4d7a-b460-b45713107599" SourceId="1" SourceUrl="http://localhost:60706/EmployeeManager.svc?xsd=xsd2" />
+    <MetadataFile FileName="EmployeeManager2.xsd" MetadataType="Schema" ID="343c2b7a-ed66-4cb6-bea7-eecb99c4483b" SourceId="1" SourceUrl="http://localhost:60706/EmployeeManager.svc?xsd=xsd1" />
+    <MetadataFile FileName="EmployeeManager.wsdl" MetadataType="Wsdl" ID="28aa990d-f0e6-438e-83d2-31cc55e08306" SourceId="1" SourceUrl="http://localhost:60706/EmployeeManager.svc?wsdl" />
+    <MetadataFile FileName="EmployeeManager.disco" MetadataType="Disco" ID="5d1499c2-201f-4574-868d-f66c75d7b13e" SourceId="1" SourceUrl="http://localhost:60706/EmployeeManager.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

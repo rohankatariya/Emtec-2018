@@ -1,0 +1,10 @@
+table{
+    margin: 20px;
+}
+.hiperlink{
+    color: blue;
+    cursor: pointer;
+}
+.hiperlink:hover{
+    text-decoration: underline;
+}

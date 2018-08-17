@@ -1,0 +1,39 @@
+<div *ngIf="employ">
+  <table class="table">
+    <tr>
+        <th>
+            Id
+          </th>
+          <th>
+            Name
+          </th>
+          <th>
+            Department
+          </th>
+          <th>
+          </th>
+          <th> 
+          </th>
+    </tr>
+    <tr *ngFor="let employee of employ">
+        <td>
+          {{employee.id}}
+        </td>
+        <td>
+          {{employee.name}}
+        </td>
+        <td>
+          {{employee.department}}
+        </td>
+        <td>
+          <a href="/Edit">Edit</a>
+        </td>
+        <td>
+          <label class="hiperlink" (click)='deleteById(employee.id)'>Delete</label>
+        </td>
+    </tr>
+    
+  </table>
+</div>
+<a href="/AddEmployee" class="btn btn-primary btn-large alignmargin">Add Employee</a>
+<app-delete *ngIf="deleteId" [deleteId]="deleteId"></app-delete>
